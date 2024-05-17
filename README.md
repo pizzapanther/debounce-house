@@ -5,7 +5,7 @@ More advanced debouncing for hairy situations
 ![Bounce House](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXl2YXQzejk2b2F5eXZ6dHppMjJjOWRxam9xbjJ1eTU3ZWJyZDZ1diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SrBwTxpDmFB6/giphy.gif)
 
 
-Features:
+**Features:**
 
 - Debounce by key
   - gives you more flexibility in what to debounce
@@ -39,3 +39,90 @@ log_message(2, "Another Message");
 // Debouncing: 1: Last Message
 // Debouncing: 2: Another Message
 ```
+
+### Debounce Promises
+
+```javascript
+import { debounce_promise } from 'debounce-house';
+
+function save_month_data(id, month, data) {
+  return debounce_promise(3000, `save-sales-${id}-${month}`, () => {
+    axios.post(`/api/sales/${id}/${month}`, data);
+  });
+}
+
+save_month_data(1, '2024-01', data1)
+  .then((response) => {})
+  .catch((error) => {});
+
+save_month_data(1, '2024-01', data2)
+  .then((response) => {})
+  .catch((error) => {});
+
+save_month_data(1, '2024-01', data3)
+  .then((response) => {})
+  .catch((error) => {});
+
+save_month_data(1, '2024-02', data4)
+  .then((response) => {})
+  .catch((error) => {});
+
+// API Call (1, '2024-01', data3) and (1, '2024-02', data4)
+// are called after 3000 ms.
+// All (1, '2024-01', *) promises receive the result from
+// last call (1, '2024-02', data4).
+```
+
+## API
+
+### debounce_func(timeout, key, fn)
+
+Debounce function calls based on keys that are similar. Last function that is debounced within the timeout period is called.
+
+#### timeout
+
+Type: Integer
+
+Wait timeout in milliseconds the function will be debounced.
+
+#### key
+
+Type: String
+
+Key used to debounce function
+
+#### fn
+
+Type: Function
+
+Function to call
+
+#### Return
+
+`undefined`
+
+### debounce_promise(timeout, key, fn)
+
+Debounce promises based on keys that are similar. Last promise that is debounced within the timeout period is called. All promises are resolved with the result from that last promise call.
+
+#### timeout
+
+Type: Integer
+
+Wait timeout in milliseconds the function will be debounced.
+
+#### key
+
+Type: String
+
+Key used to debounce function
+
+#### fn
+
+Type: Function
+
+Function to call. Function should return a Promise.
+
+#### Return
+
+`Promise`

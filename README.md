@@ -2,4 +2,4 @@
 
 More advanced debouncing for hairy situations
 
-<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/SrBwTxpDmFB6" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/sonyanimation-SrBwTxpDmFB6">via GIPHY</a></p>
+![Bounce House][https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXl2YXQzejk2b2F5eXZ6dHppMjJjOWRxam9xbjJ1eTU3ZWJyZDZ1diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SrBwTxpDmFB6/giphy.gif]

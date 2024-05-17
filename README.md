@@ -81,20 +81,17 @@ Debounce function calls based on keys that are similar. Last function that is de
 
 #### timeout
 
-Type: Integer
-
+Type: Integer<br>
 Wait timeout in milliseconds the function will be debounced.
 
 #### key
 
-Type: String
-
+Type: String<br>
 Key used to debounce function
 
 #### fn
 
-Type: Function
-
+Type: Function<br>
 Function to call
 
 #### Return
@@ -107,20 +104,17 @@ Debounce promises based on keys that are similar. Last promise that is debounced
 
 #### timeout
 
-Type: Integer
-
+Type: Integer<br>
 Wait timeout in milliseconds the function will be debounced.
 
 #### key
 
-Type: String
-
+Type: String<br>
 Key used to debounce function
 
 #### fn
 
-Type: Function
-
+Type: Function<br>
 Function to call. Function should return a Promise.
 
 #### Return
